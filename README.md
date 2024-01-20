@@ -21,3 +21,11 @@ Todo.objects.filter(is_active=True)
 # is_active olanlarin sayi:
 Todo.objects.filter(is_active=True).count()
 '''
+# Update etmek komandasi:
+Todo.objects.filter(is_active=False).update(is_acive=True)
+
+# Title icerisinde Django olmayanlari tapmaq ve Django elave etmek:
+todos = Todo.objects.exclude(title__icontains='Django')
+for item in todos:
+    item.title = f"{item.title} - Django"
+     item.save()

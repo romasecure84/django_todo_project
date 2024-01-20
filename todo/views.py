@@ -3,7 +3,9 @@ from todo.models import Todo
 # from django.http import HttpResponse
 
 def home_view(request):
-    todos = Todo.objects.filter(is_active=True)
+    todos = Todo.objects.filter(
+        is_active=True
+        )
     context = dict(
         todos=todos
     )
