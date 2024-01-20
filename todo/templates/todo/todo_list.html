@@ -2,4 +2,10 @@
 
 {% block container %}
     <h1 class="text-primary">TODO LIST</h1>
+    <ul>
+        {% for todo in todos %}
+        <li>{{ todo.title }}</li>
+        {% endfor %}
+        
+    </ul>
 {% endblock container %}
