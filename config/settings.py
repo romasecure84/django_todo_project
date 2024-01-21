@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-i9(0%_x&^$ooe=jp5l2hw7m-ll($#ys$ab@%0%9r4a3m0ri8vn"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -138,3 +138,18 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Django ORM Query -> all, filter, explude, create, tetbiq edildi
+# Django ORM ile veriler  update olundu
+# Instance icerisindeki melumatlar deyisdirildi
+# Static dosya strukturu yaradildi
+# Makemigrations ve migrate qavramlarina baxildi
+# setting icerisindeki APP strukturlari ayrildi
+
+# Elaveler:
+# Todo: Todolarin kategoriyalari olsun
+# Todo: Kateqoriya icerisindeki Tasklar nelerdir?
+# Todo: Todo'nu elave eden kimdir
+# Todo: Todo'ya bir nece tag elave etmek
+# Todo: tag'a aid todo'lar hansilardir?
