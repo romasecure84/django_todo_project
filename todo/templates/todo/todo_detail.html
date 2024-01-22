@@ -5,9 +5,14 @@
 
   <div class="col-sm-6 offset-sm-3">
     <a href="/" class="btn btn-primary">Ana Sehife</a>
-    <h1 class="text-primary">{{ todo.title }}</h1>
+    <h1 class="text-primary">{{ todo.title }} </h1>
+    <h4 class="text-muted">{{ todo.category }}</h4>
     <p>
         {{ todo.content }}
     </p>
+    <ul>
+      <li>Yaradildi: {{ todo.created_at | date:"D d M Y H:s" }}</li>
+      <li>Deyisdirildi: {{ todo.updated_at | date:"D d M Y H:s" }}</li>
+    </ul>
   </div>
 {% endblock %}
