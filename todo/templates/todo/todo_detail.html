@@ -1,18 +1,18 @@
 {% extends 'core/base.html' %}
 
 {% block container %}
- 
-
   <div class="col-sm-6 offset-sm-3">
-    <a href="/" class="btn btn-primary">Ana Sehife</a>
-    <h1 class="text-primary">{{ todo.title }} </h1>
-    <h4 class="text-muted">{{ todo.category }}</h4>
-    <p>
-        {{ todo.content }}
-    </p>
-    <ul>
-      <li>Yaradildi: {{ todo.created_at | date:"D d M Y H:s" }}</li>
-      <li>Deyisdirildi: {{ todo.updated_at | date:"D d M Y H:s" }}</li>
-    </ul>
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title text-primary">{{ todo.title }}</h3>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{ todo.category }}</h6>
+        <p class="card-text">{{ todo.content }}</p>
+        <ul class="list-unstyled">
+          <li><small>Yaradildi: {{ todo.created_at|date:'D d M Y H:s' }}</small></li>
+          <li><small>Deyisdirildi: {{ todo.updated_at|date:'D d M Y H:s' }}</small></li>
+        </ul>
+        <a href="/" class="card-link">Geri Don</a>
+      </div>
+    </div>
   </div>
-{% endblock %}
+{% endblock container %}

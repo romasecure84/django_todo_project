@@ -149,7 +149,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # setting icerisindeki APP strukturlari ayrildi
 
 # Elaveler:
-# Todo: Todolarin kategoriyalari olsun
+# Done: Todolarin kategoriyalari olsun
 # Todo: Kateqoriya icerisindeki Tasklar nelerdir?
 # Todo: Todo'nu elave eden kimdir
 # Todo: Todo'ya bir nece tag elave etmek
