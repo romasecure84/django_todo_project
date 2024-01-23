@@ -1,5 +1,7 @@
 from django.db import models
 from autoslug import AutoSlugField
+from django.urls import reverse
+
 
 class Category(models.Model):
     title = models.CharField(max_length=200)
@@ -9,6 +11,14 @@ class Category(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse(
+            'category_view',
+            kwargs={
+                'category_slug': self.slug
+            }
+        )
 
 class Todo(models.Model):
     #category = models.ForeignKey(Category, on_delete=models.CASCADE) # Bu usulla kateqoriya silinende, elaqeli hamisi silinir
@@ -21,3 +31,5 @@ class Todo(models.Model):
 
     def __str__(self):
         return self.title
+    
+
