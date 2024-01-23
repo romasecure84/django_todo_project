@@ -152,5 +152,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Done: Todolarin kategoriyalari olsun
 # Todo: Kateqoriya icerisindeki Tasklar nelerdir?
 # Todo: Todo'nu elave eden kimdir
+# Todo: Todo'nu elave eden sadece ozu elave eden todo'lari gorsun
 # Todo: Todo'ya bir nece tag elave etmek
 # Todo: tag'a aid todo'lar hansilardir?
