@@ -19,6 +19,12 @@
           <li><small>Yaradildi: {{ todo.created_at|date:'D d M Y H:s' }}</small></li>
           <li><small>Deyisdirildi: {{ todo.updated_at|date:'D d M Y H:s' }}</small></li>
         </ul>
+        <ul class="list-inline">
+          {% for tag in todo.tag.all %}
+          <li class="list-inline-item"><span class="badge rounded-pill text-bg-primary">{{ tag }}</span>
+          {% endfor %}
+          </li>
+        </ul>
         <a href="/" class="card-link">Geri Don</a>
       </div>
     </div>

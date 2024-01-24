@@ -22,11 +22,23 @@ class Category(models.Model):
             }
         )
 
+
+class Tag(models.Model):
+    title = models.CharField(max_length=200)
+    slug = AutoSlugField(populate_from='title', unique=True,)
+    is_active = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
+    
+
+
 class Todo(models.Model):
     #category = models.ForeignKey(Category, on_delete=models.CASCADE) # Bu usulla kateqoriya silinende, elaqeli hamisi silinir
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     # user = models.ForeignKey(User, on_delete=models.CASCADE, defaul=1)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    tag = models.ManyToManyField(Tag)
     title = models.CharField(max_length=200)
     content = models.TextField(blank=True, null=True)
     is_active = models.BooleanField(default=False)
