@@ -1,9 +1,13 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
+#from django.http import Http404
+# My models:
 from todo.models import Todo, Category
-from django.http import Http404
 
+@login_required(login_url='/admin/login/')
 def home_view(request):
     todos = Todo.objects.filter(
+        user=request.user,
         is_active=True
         )
     context = dict(
@@ -21,10 +25,11 @@ def home_view(request):
 #     except Todo.DoesNotExist:
 #         raise Http404
 
-
+@login_required(login_url='/admin/login/')
 def category_view(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
     todos = Todo.objects.filter(
+        user=request.user,
         is_active=True,
         category=category,
         )
@@ -34,8 +39,9 @@ def category_view(request, category_slug):
     )
     return render(request, 'todo/todo_list.html', context)
 
+@login_required(login_url='/admin/login/')
 def todo_detail_view(request, category_slug, id):
-    todo = get_object_or_404(Todo, category__slug=category_slug, pk=id)
+    todo = get_object_or_404(Todo, category__slug=category_slug, pk=id, user=request.user)
     context = dict(
        todo=todo,
           )
